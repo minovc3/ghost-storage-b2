@@ -70,7 +70,7 @@ class Store extends BaseStore {
         fileName: fileName,
         data: file,
       }).then((response) => {
-        return `${this.host}/file/${this.bucketName}/${response.data.fileName}`;
+        return `${this.host}/${response.data.fileName}`;
       })
     })
   }
@@ -104,7 +104,7 @@ class Store extends BaseStore {
       filepath = upath.join(this.pathPrefix, options.path);
     }
 
-    const url = `${this.host}/file/${this.bucketName}/${filepath}`;
+    const url = `${this.host}/${filepath}`;
     return getBuffer(url);
   }
 }
